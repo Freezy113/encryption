@@ -11,7 +11,7 @@ def playfer():
     if choose == 1:
         compile(alpha)
     else:
-        decompile()
+        decompile(alpha)
 
 def compile(alpha):
     print("Введите послание (eng)")
@@ -82,5 +82,70 @@ def casethree(x1,y1,x2,y2,alpha):
     return s
 
 
-def decompile():
-    return 0
+def decompile(alpha):
+    print("Введите послание (eng)")
+    s = input().strip()
+    s = [x for x in s]
+    answer=''
+
+    for i in range(1, len(s), 2):
+        answer+=encrypt(s[i-1],s[i],alpha)
+    t = answer[0]
+    for i in range(1,len(answer)-1):
+        if answer[i] !='x' and answer[i-1] != answer[i+1]:
+            t += answer[i]
+    print(t+answer[-1])
+
+def encrypt(a,b,alpha):
+    x1 = 0
+    y1 = 0
+    x2 = 0
+    y2 = 0
+    for i in range(5):
+        for j in range(5):
+            if alpha[i][j] == a:
+                x1 = i
+                y1 = j
+            if alpha[i][j] == b:
+                x2 = i
+                y2 = j
+    # x - строка y - столбец
+    if x1 == x2:
+        s = decaseone(x1, y1, x2, y2, alpha)
+    elif y1 == y2:
+        s = decasetwo(x1, y1, x2, y2, alpha)
+    else:
+        s = decasethree(x1, y1, x2, y2, alpha)
+    if s[-1] == 'x' and len(s) % 2 == 0:
+        s=s[:-1]
+    return s
+
+def decaseone(x1,y1,x2,y2,alpha):
+    if y1>0:
+        y1-=1
+    else:
+        y1=4
+
+    if y2>0:
+        y2-=1
+    else:
+        y2=4
+    s = alpha[x1][y1] + alpha[x2][y2]
+    return s
+
+def decasetwo(x1,y1,x2,y2,alpha):
+    if x1>0:
+        x1-=1
+    else:
+        x1=4
+
+    if x2>0:
+        x2-=1
+    else:
+        x2=4
+    s=alpha[x1][y1] + alpha[x2][y2]
+    return s
+
+def decasethree(x1,y1,x2,y2,alpha):
+    s=alpha[x1][y2]+alpha[x2][y1]
+    return s
