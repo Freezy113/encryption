@@ -6,7 +6,7 @@ import playfer as pf
 
 alpha = ' abcdefghijklmnopqrstuvwxyz'
 choose = input()
-
+pf.test()
 if choose == '1':
     cs.caesar(alpha)
 if choose == '2':

@@ -5,3 +5,7 @@ def playfer(alpha):
         print('1')
     else:
         print('3')
+
+def test():
+    t=[1,2]
+    print(t[2])
