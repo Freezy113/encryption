@@ -6,7 +6,6 @@ import playfer as pf
 
 alpha = ' abcdefghijklmnopqrstuvwxyz'
 choose = input()
-
 if choose == '1':
     cs.caesar(alpha)
 if choose == '2':
@@ -16,4 +15,4 @@ if choose == '3':
 if choose == '4':
     ak.autokey(alpha)
 if choose == '5':
-    pf.playfer(alpha)
+    pf.playfer()
