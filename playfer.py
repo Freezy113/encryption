@@ -1,11 +1,19 @@
-def playfer(alpha):
+def playfer():
+    alpla = [
+            ["a","b","c","d","e"]
+            ["f","g","h","i","k"]
+            ["l","m","n","o","q"]
+            ["r","s","t","u","v"]
+            ]
     print('Зашифровать - 1, расшифровать - 2')
     choose = int(input())
     if choose == 1:
-        print('1')
+        compile()
     else:
-        print('3')
+        decompile()
 
-def test():
-    t=[1,2]
-    print(t[2])
+def compile():
+    return 0
+
+def decompile():
+    return 0

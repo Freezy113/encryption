@@ -16,4 +16,4 @@ if choose == '3':
 if choose == '4':
     ak.autokey(alpha)
 if choose == '5':
-    pf.playfer(alpha)
+    pf.playfer()
