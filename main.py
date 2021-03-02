@@ -4,6 +4,7 @@ import affine as af
 import autokey as ak
 import playfer as pf
 import viginer as vg
+import hell as hell
 
 alpha = ' abcdefghijklmnopqrstuvwxyz'
 choose = input()
@@ -19,3 +20,5 @@ if choose == '5':
     pf.playfer()
 if choose == '6':
     vg.viginer(alpha)
+if choose == '7':
+    hell.hell(alpha)
